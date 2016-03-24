@@ -4,10 +4,62 @@ Reproducible Research: Peer Assessment 1
 Loading and preprocessing the data
 ----------------------------------
 
+``` r
 require(ggplot2)
+```
+
+    ## Loading required package: ggplot2
+
+``` r
 require(lubridate)
+```
+
+    ## Loading required package: lubridate
+
+``` r
 require(mice)
+```
+
+    ## Loading required package: mice
+
+    ## Loading required package: Rcpp
+
+    ## mice 2.25 2015-11-09
+
+``` r
 require(VIM)
+```
+
+    ## Loading required package: VIM
+
+    ## Loading required package: colorspace
+
+    ## Loading required package: grid
+
+    ## Loading required package: data.table
+
+    ## 
+    ## Attaching package: 'data.table'
+
+    ## The following objects are masked from 'package:lubridate':
+    ## 
+    ##     hour, mday, month, quarter, wday, week, yday, year
+
+    ## VIM is ready to use. 
+    ##  Since version 4.0.0 the GUI is in its own package VIMGUI.
+    ## 
+    ##           Please use the package to use the new (and old) GUI.
+
+    ## Suggestions and bug-reports can be submitted at: https://github.com/alexkowa/VIM/issues
+
+    ## 
+    ## Attaching package: 'VIM'
+
+    ## The following object is masked from 'package:datasets':
+    ## 
+    ##     sleep
+
+``` r
 # call packages
 library(ggplot2)
 library(lubridate)
