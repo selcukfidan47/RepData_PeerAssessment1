@@ -4,21 +4,10 @@ Reproducible Research: Peer Assessment 1
 Loading and preprocessing the data
 ----------------------------------
 
-``` r
 require(ggplot2)
-
-``` r
 require(lubridate)
-
-
-``` r
 require(mice)
-```
-
-``` r
 require(VIM)
-```
-``` r
 # call packages
 library(ggplot2)
 library(lubridate)
