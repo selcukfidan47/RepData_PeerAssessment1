@@ -202,16 +202,6 @@ aggregated.avgs <- aggregate(steps ~ interval + day, data = new.activity.mon.dat
 
 weekday.aggregated.avgs <- subset(aggregated.avgs, day=="weekday")
 weekend.aggregated.avgs <- subset(aggregated.avgs, day!="weekday")
-par(mfrow = c(2, 2))
-
-plot( x = weekday.aggregated.avgs$interval,y = weekday.aggregated.avgs$steps, type = "l", xlab = "5-Minute-Interval", 
-    main = "Daily Activity Pattern", ylab = "Average number of steps",col="red",lwd=3)
-
-grid()
-plot( x = weekend.aggregated.avgs$interval,y = weekend.aggregated.avgs$steps, type = "l", xlab = "5-Minute-Interval", 
-    main = "Daily Activity Pattern", ylab = "Average number of steps",col="red",lwd=3)
-grid()
-
 
 sf<-ggplot(aggregated.avgs, aes(interval, steps,color = day))+scale_colour_manual(values=c("red","black")) + geom_line(size=2) + facet_grid(. ~ day,scales = "free", space = "free") + 
     xlab("5-minute interval") + ylab("Number of steps")+theme(axis.text=element_text(size=20,colour="blue"),legend.position='none',
