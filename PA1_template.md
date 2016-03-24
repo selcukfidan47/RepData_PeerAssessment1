@@ -349,7 +349,8 @@ c.x1<-weekend.aggregated.avgs$interval[match(c.y1,weekend.aggregated.avgs$steps)
 c.x2<-weekday.aggregated.avgs$interval[match(c.y2,weekday.aggregated.avgs$steps)]
 #dev.off()
 ```
-`` r
+
+``` r
 ggplot(aggregated.avgs, aes(interval, steps,color = day))+scale_colour_manual(values=c("red","black")) + geom_line(size=2) + facet_grid(. ~ day,scales = "free", space = "free") + 
     xlab("5-minute interval") + ylab("Number of steps")+theme(axis.text=element_text(size=20,colour="blue"),legend.position='none',
         axis.title=element_text(size=20,face="bold"),legend.background = element_rect(),panel.background = element_rect(fill = "grey"),strip.text.x = element_text(size=24, face="bold",colour="white"),
