@@ -345,18 +345,6 @@ aggregated.avgs <- aggregate(steps ~ interval + day, data = new.activity.mon.dat
 
 weekday.aggregated.avgs <- subset(aggregated.avgs, day=="weekday")
 weekend.aggregated.avgs <- subset(aggregated.avgs, day!="weekday")
-par(mfrow = c(2, 2))
-
-plot( x = weekday.aggregated.avgs$interval,y = weekday.aggregated.avgs$steps, type = "l", xlab = "5-Minute-Interval", 
-    main = "Daily Activity Pattern", ylab = "Average number of steps",col="red",lwd=3)
-
-grid()
-plot( x = weekend.aggregated.avgs$interval,y = weekend.aggregated.avgs$steps, type = "l", xlab = "5-Minute-Interval", 
-    main = "Daily Activity Pattern", ylab = "Average number of steps",col="red",lwd=3)
-grid()
-
-
-
 
 c.y1<-max(weekend.aggregated.avgs$steps)
 c.y2<-max(weekday.aggregated.avgs$steps)
@@ -365,10 +353,7 @@ c.x1<-weekend.aggregated.avgs$interval[match(c.y1,weekend.aggregated.avgs$steps)
 c.x2<-weekday.aggregated.avgs$interval[match(c.y2,weekday.aggregated.avgs$steps)]
 #dev.off()
 ```
-
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-22-1.png)<!-- -->
-
-``` r
+`` r
 sf<-ggplot(aggregated.avgs, aes(interval, steps,color = day))+scale_colour_manual(values=c("red","black")) + geom_line(size=2) + facet_grid(. ~ day,scales = "free", space = "free") + 
     xlab("5-minute interval") + ylab("Number of steps")+theme(axis.text=element_text(size=20,colour="blue"),legend.position='none',
         axis.title=element_text(size=20,face="bold"),legend.background = element_rect(),panel.background = element_rect(fill = "grey"),strip.text.x = element_text(size=24, face="bold",colour="white"),
