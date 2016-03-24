@@ -185,8 +185,7 @@ plot( x = names(daily.act.pattern),y = daily.act.pattern, type = "l", xlab = "5-
     main = "Daily Activity Pattern", ylab = "Average number of steps",col="red",lwd=3)
 grid()
 ```
-
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-9-1.png)<!-- -->
+![plot of chunk unnamed-chunk-9-1](Figures/plot2.png)
 
 -   On average across all the days in the dataset, the 5-minute interval contains the maximum number of steps?
 
@@ -227,8 +226,7 @@ md.pattern(activity.mon.data)
 ``` r
 aggr_plot <- aggr(activity.mon.data, col=c('navyblue','red'), numbers=TRUE, sortVars=TRUE, labels=names(data), cex.axis=.7, gap=3, ylab=c("Histogram of missing data","Pattern"))
 ```
-
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-12-1.png)<!-- -->
+![plot of chunk unnamed-chunk-12-1](Figures/plot3.png)
 
     ## 
     ##  Variables sorted by number of missings: 
@@ -240,8 +238,7 @@ aggr_plot <- aggr(activity.mon.data, col=c('navyblue','red'), numbers=TRUE, sort
 ``` r
 marginmatrix(activity.mon.data)
 ```
-
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-13-1.png)<!-- -->
+![plot of chunk unnamed-chunk-13-1](Figures/plot4.png)
 
 -   Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
@@ -268,8 +265,8 @@ new.per.day <- tapply(new.activity.mon.data$steps, new.activity.mon.data$date, F
 hist(new.per.day,53, main = "Total number of steps taken per day", xlab = "steps per day",col="black")
 abline(v = mean(new.per.day), col = "red", lwd = 2)
 ```
+![plot of chunk unnamed-chunk-16-1](Figures/plot5.png)
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-16-1.png)<!-- -->
 
 ``` r
 #dev.off()
@@ -323,8 +320,7 @@ hist(new.per.day,53, main = "Total number of steps taken per day
      (missing values replaced with mean of interval)", xlab = "steps per day",col="black")
 abline(v = median(new.per.day), col = "red", lwd = 2)
 ```
-
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-21-1.png)<!-- -->
+![plot of chunk unnamed-chunk-21-1](Figures/plot6.png)
 
 Are there differences in activity patterns between weekdays and weekends?
 -------------------------------------------------------------------------
@@ -360,5 +356,5 @@ sf<-ggplot(aggregated.avgs, aes(interval, steps,color = day))+scale_colour_manua
           strip.background = element_rect(colour="red", fill="blue"))
 print(sf)
 ```
+![plot of chunk unnamed-chunk-23-1](Figures/plot7.png)
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-23-1.png)<!-- -->
