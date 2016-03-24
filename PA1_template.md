@@ -145,7 +145,7 @@ hist(per.day,53, main = "Total number of steps taken per day", xlab = "steps per
 abline(v = mean(per.day), col = "red", lwd = 2)
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-5-1.png)<!-- -->
+![plot of chunk unnamed-chunk-5-1](Figures/Plot1.png)
 
 -   Mean of the total number of steps taken per day
 
